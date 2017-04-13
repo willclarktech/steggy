@@ -1,6 +1,6 @@
-# stegosaurus
+# steggy
 
-![stegosaurus](https://upload.wikimedia.org/wikipedia/commons/c/c6/Stego-marsh-1896-US_geological_survey.png)
+![steggy](https://upload.wikimedia.org/wikipedia/commons/c/c6/Stego-marsh-1896-US_geological_survey.png)
 
 ## About
 

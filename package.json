@@ -1,5 +1,5 @@
 {
-  "name": "stegosaurus",
+  "name": "steggy",
   "version": "1.0.0",
   "description": "a basic steganography library for png files",
   "main": "index.js",
@@ -8,9 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/willclarktech/stegosaurus.git"
+    "url": "git+https://github.com/willclarktech/steggy.git"
   },
   "keywords": [
+    "steggy",
     "steganography",
     "node",
     "png"
@@ -18,9 +19,9 @@
   "author": "willclarktech",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/willclarktech/stegosaurus/issues"
+    "url": "https://github.com/willclarktech/steggy/issues"
   },
-  "homepage": "https://github.com/willclarktech/stegosaurus#readme",
+  "homepage": "https://github.com/willclarktech/steggy#readme",
   "dependencies": {
     "pngjs": "^3.0.1"
   },
