@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/willclarktech/stegosaurus/issues"
   },
-  "homepage": "https://github.com/willclarktech/stegosaurus#readme"
+  "homepage": "https://github.com/willclarktech/stegosaurus#readme",
+  "dependencies": {
+    "pngjs": "^3.0.1"
+  }
 }
