@@ -8,6 +8,8 @@ That package depends on [lwip](https://github.com/EyalAr/lwip), which has a comp
 
 This package uses the more lightweight [pngjs](https://github.com/lukeapage/pngjs) for image parsing, nice ES6+ features, and a pure functional approach. It is designed for programmatic use.
 
+There is currently only support for `.png` files.
+
 ## Usage
 
 To conceal a message in an image:
