@@ -21,6 +21,6 @@ fs.writeFileSync(outputFile || './tmp/output.png', concealed)
 // REVEAL
 ////////////////////////////////////////////////////////////////
 
-const image = fs.readFileSync('./tmp/output.png')
+const image = fs.readFileSync(outputFile || './tmp/output.png')
 const revealed = reveal(image, 'utf8')
 console.info('message was:', revealed)
