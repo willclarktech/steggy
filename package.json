@@ -1,6 +1,6 @@
 {
   "name": "steggy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a basic steganography library for png files",
   "main": "index.js",
   "scripts": {
