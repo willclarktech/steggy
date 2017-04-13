@@ -23,7 +23,7 @@ npm install steggy
 To conceal a message in an image:
 ```js
 const fs = require('fs')
-const { conceal } = require('./index')
+const { conceal } = require('steggy')
 
 const original = fs.readFileSync('./path/to/image.png') // buffer
 const message = 'keep it secret, keep it safe' // string or buffer
@@ -36,7 +36,7 @@ fs.writeFileSync('./path/to/output.png', concealed)
 To reveal a message hidden in an image:
 ```js
 const fs = require('fs')
-const { reveal } = require('./index')
+const { reveal } = require('steggy')
 
 const image = fs.readFileSync('./path/to/image.png')
 // Returns a string if encoding is provided, otherwise a buffer
