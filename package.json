@@ -1,7 +1,7 @@
 {
   "name": "stegosaurus",
   "version": "1.0.0",
-  "description": "a basic steganography library",
+  "description": "a basic steganography library for png files",
   "main": "index.js",
   "scripts": {
     "test": "./test.js"
@@ -12,7 +12,8 @@
   },
   "keywords": [
     "steganography",
-    "node"
+    "node",
+    "png"
   ],
   "author": "willclarktech",
   "license": "MIT",
