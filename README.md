@@ -1,5 +1,7 @@
 # stegosaurus
 
+![stegosaurus](https://upload.wikimedia.org/wikipedia/commons/c/c6/Stego-marsh-1896-US_geological_survey.png)
+
 ## About
 
 This is a basic steganography library inspired by [steganography](https://github.com/rodrigouroz/steganography), following the technique outlined [here](http://domnit.org/blog/2007/02/stepic-explanation.html).
