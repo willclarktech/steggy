@@ -4,7 +4,7 @@
   "description": "a basic steganography library for png files",
   "main": "index.js",
   "scripts": {
-    "test": "./test.js"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,8 @@
   "homepage": "https://github.com/willclarktech/stegosaurus#readme",
   "dependencies": {
     "pngjs": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=7.8.0"
   }
 }
