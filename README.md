@@ -12,6 +12,12 @@ This package uses the more lightweight [pngjs](https://github.com/lukeapage/pngj
 
 There is currently only support for `.png` files.
 
+## Installation
+
+```sh
+npm install steggy
+```
+
 ## Usage
 
 To conceal a message in an image:
