@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 const assert = require('assert')
 const {
-  getBitIndex,
+  getMessageIndex,
 } = require('../lib/conceal')
 
-const testGetBitIndex = () => {
+const testGetMessageIndex = () => {
   const testCorrectOutputs = () => {
     const correct = [
       [0, 0],
@@ -17,7 +17,7 @@ const testGetBitIndex = () => {
     ]
 
     correct.forEach(([input, output]) =>
-      assert.strictEqual(getBitIndex(input), output)
+      assert.strictEqual(getMessageIndex(input), output)
     )
   }
 
@@ -25,7 +25,7 @@ const testGetBitIndex = () => {
     const invalid = [3, 7, 11, 103]
 
     invalid.forEach(input =>
-      assert.throws(getBitIndex.bind(null, input), /Cannot get bit index/)
+      assert.throws(getMessageIndex.bind(null, input), /Cannot get bit index/)
     )
   }
 
@@ -34,5 +34,5 @@ const testGetBitIndex = () => {
 }
 
 [
-  testGetBitIndex,
+  testGetMessageIndex,
 ].forEach(test => test())
