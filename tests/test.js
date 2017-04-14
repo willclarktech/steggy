@@ -8,22 +8,43 @@ const {
   reveal,
 } = require('../lib/reveal')
 
+const attemptTest = test => {
+  try {
+    test()
+  } catch (e) {
+    console.error(e)
+  }
+}
+
 const testEndToEnd = () => {
-  const testWithBuffers = () => {
-    const image = fs.readFileSync(`${__dirname}/16x16.png`)
-    const message = Buffer.from('testing testing 123')
+  const image = fs.readFileSync(`${__dirname}/16x16.png`)
+  const message = Buffer.from('testing testing 123')
 
-    const concealed = conceal(image, message)
-    fs.writeFileSync('./tmp/TEST.png', concealed)
-    const result = reveal(concealed)
-    console.log('message was:', result.toString())
-
+  const testWithoutEncryption = () => {
+    const concealed = conceal()(image, message)
+    const result = reveal()(concealed)
     return assert.ok(result.equals(message))
   }
 
-  testWithBuffers()
+  const testWithEncryption = () => {
+    const concealed = conceal('letmein')(image, message)
+    const result = reveal('letmein')(concealed)
+    return assert.ok(result.equals(message))
+  }
+
+  const testEncryptionRequired = () => {
+    const concealed = conceal('letmein')(image, message)
+    const result = reveal()(concealed)
+    return assert.strictEqual(result.equals(message), false)
+  }
+
+  [
+    testWithoutEncryption,
+    testWithEncryption,
+    testEncryptionRequired,
+  ].forEach(attemptTest)
 }
 
 [
   testEndToEnd,
-].forEach(test => test())
+].forEach(attemptTest)
