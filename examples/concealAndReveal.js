@@ -14,7 +14,7 @@ const message = messageFile
   ? fs.readFileSync(messageFile)
   : 'just testing'
 const original = fs.readFileSync(inputFile || './tmp/input.png')
-const concealed = conceal(original, message)
+const concealed = conceal()(original, message)
 fs.writeFileSync(outputFile || './tmp/output.png', concealed)
 
 ////////////////////////////////////////////////////////////////
@@ -22,5 +22,5 @@ fs.writeFileSync(outputFile || './tmp/output.png', concealed)
 ////////////////////////////////////////////////////////////////
 
 const image = fs.readFileSync(outputFile || './tmp/output.png')
-const revealed = reveal(image, 'utf8')
+const revealed = reveal()(image, 'utf8')
 console.info('message was:', revealed)
