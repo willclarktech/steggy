@@ -2,10 +2,11 @@
 const assert = require('assert')
 const {
   getBitIndex,
-  getMessageBit,
-  conceal,
-  reveal,
-} = require('./index')
+  // conceal,
+} = require('../lib/conceal')
+const {
+  // reveal,
+} = require('../lib/reveal')
 
 const testGetBitIndex = () => {
   const correct = [

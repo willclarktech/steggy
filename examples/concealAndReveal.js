@@ -3,7 +3,7 @@ const fs = require('fs')
 const {
   conceal,
   reveal,
-} = require('./index')
+} = require('../index')
 
 ////////////////////////////////////////////////////////////////
 // CONCEAL
