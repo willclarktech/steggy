@@ -1,8 +1,13 @@
 #!/usr/bin/env node
+const fs = require('fs')
 const assert = require('assert')
 const {
   getMessageIndex,
+  conceal,
 } = require('../lib/conceal')
+const {
+  reveal,
+} = require('../lib/reveal')
 
 const testGetMessageIndex = () => {
   const testCorrectOutputs = () =>
@@ -27,6 +32,21 @@ const testGetMessageIndex = () => {
   testInvalidInputs()
 }
 
+const testEndToEnd = () => {
+  const testWithBuffers = () => {
+    const image = fs.readFileSync(`${__dirname}/16x16.png`)
+    const message = Buffer.from('testing testing 123')
+
+    const concealed = conceal(image, message)
+    const result = reveal(concealed)
+
+    return assert.ok(result.equals(message))
+  }
+
+  testWithBuffers()
+}
+
 [
+  testEndToEnd,
   testGetMessageIndex,
 ].forEach(test => test())
