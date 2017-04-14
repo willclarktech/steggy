@@ -5,8 +5,8 @@ const {
 } = require('../lib/conceal')
 
 const testGetMessageIndex = () => {
-  const testCorrectOutputs = () => {
-    const correct = [
+  const testCorrectOutputs = () =>
+    [
       [0, 0],
       [1, 1],
       [2, 2],
@@ -14,20 +14,14 @@ const testGetMessageIndex = () => {
       [5, 4],
       [12, 9],
       [13, 10],
-    ]
-
-    correct.forEach(([input, output]) =>
+    ].forEach(([input, output]) =>
       assert.strictEqual(getMessageIndex(input), output)
     )
-  }
 
-  const testInvalidInputs = () => {
-    const invalid = [3, 7, 11, 103]
-
-    invalid.forEach(input =>
+  const testInvalidInputs = () =>
+    [3, 7, 11, 103].forEach(input =>
       assert.throws(getMessageIndex.bind(null, input), /Cannot get bit index/)
     )
-  }
 
   testCorrectOutputs()
   testInvalidInputs()
