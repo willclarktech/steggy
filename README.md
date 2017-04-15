@@ -23,30 +23,30 @@ npm install steggy
 To conceal a message in an image:
 ```js
 const fs = require('fs')
-const { conceal } = require('steggy')
+const steggy = require('steggy')
 
 const original = fs.readFileSync('./path/to/image.png') // buffer
 const message = 'keep it secret, keep it safe' // string or buffer
 
 // encoding should be supplied if message is provided as a string in non-default encoding
-const concealed = conceal(/* optional password */)(original, message /*, encoding */)
+const concealed = steggy.conceal(/* optional password */)(original, message /*, encoding */)
 fs.writeFileSync('./path/to/output.png', concealed)
 ```
 
 To reveal a message hidden in an image:
 ```js
 const fs = require('fs')
-const { reveal } = require('steggy')
+const steggy = require('steggy')
 
 const image = fs.readFileSync('./path/to/image.png')
 // Returns a string if encoding is provided, otherwise a buffer
-const revealed = reveal(/* optional password */)(image /*, encoding */)
+const revealed = steggy.reveal(/* optional password */)(image /*, encoding */)
 console.log(revealed.toString())
 ```
 
 ## Caveats
 
 This is currently not intended for production use, and should not be used when security is important. Security flaws include:
-1. ~~No encryption of the message before embedding (so anyone familiar with the technique can decrypt the message).~~
-1. ~~Use of the alpha channel to encode the end of the message: alpha channels typically vary less than RGB channels, so manipulation may be easier to detect. For example, an original image which is entirely opaque will end up with alpha channel values uniformly set to 254 for the part with the embedded message, followed by uniform values of 255.~~
+1. ~~No encryption of the message before embedding (so anyone familiar with the technique can decrypt the message).~~ (solved)
+1. ~~Use of the alpha channel to encode the end of the message: alpha channels typically vary less than RGB channels, so manipulation may be easier to detect. For example, an original image which is entirely opaque will end up with alpha channel values uniformly set to 254 for the part with the embedded message, followed by uniform values of 255.~~ (solved)
 1. Other things I'm less familiar with...
