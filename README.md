@@ -49,4 +49,5 @@ console.log(revealed.toString())
 This is currently not intended for production use, and should not be used when security is important. Security flaws include:
 1. ~~No encryption of the message before embedding (so anyone familiar with the technique can decrypt the message).~~ (solved)
 1. ~~Use of the alpha channel to encode the end of the message: alpha channels typically vary less than RGB channels, so manipulation may be easier to detect. For example, an original image which is entirely opaque will end up with alpha channel values uniformly set to 254 for the part with the embedded message, followed by uniform values of 255.~~ (solved)
+1. The message is embedded from the beginning of the PNG data. A more secure approach would start embedding data at a seemingly random point in the data.
 1. Other things I'm less familiar with...
